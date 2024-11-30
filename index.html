@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Prompts Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">
+            <h1>AI Agent Prompts Library</h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for agents, features, or descriptions...">
+        </div>
+        
+        <div class="tab-container">
+            <button class="tab active" onclick="switchTab(1)">Collection 1</button>
+            <button class="tab" onclick="switchTab(2)">Collection 2</button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <main class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Chain of Thought Agent</h2>
+                        <span class="agent-tag">Reasoning</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Low</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Problem Solving</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Step-by-Step Explanation</span>
+                        </div>
+                    </div>
+                    <p class="description">An AI agent that breaks down complex problems into step-by-step reasoning processes, providing detailed explanations for each decision point.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Step-by-Step Reasoning</div>
+                        <div class="feature">✓ Decision Point Analysis</div>
+                        <div class="feature">✓ Explanation Generation</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('cot-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('cot-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="cot-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">1.5k characters</span>
+                        </div>
+                        <pre class="prompt-text">
+[Your Chain of Thought prompt will go here]
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Plan Code Agent</h2>
+                        <span class="agent-tag">Software Architecture</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Project Planning</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Structured Plan</span>
+                        </div>
+                    </div>
+                    <p class="description">An expert software architect specialized in creating systematic, step-by-step implementation plans for coding challenges. Transforms problem statements into clear, actionable code development roadmaps.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Detailed Implementation Steps</div>
+                        <div class="feature">✓ Technical Requirements Analysis</div>
+                        <div class="feature">✓ Architecture Design</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('plan-code-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('plan-code-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="plan-code-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">2.5k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are an expert software architect and problem-solving agent specialized in creating systematic, step-by-step implementation plans for coding challenges. Your primary objective is to generate a comprehensive, structured plan that transforms a user's problem statement into a clear, actionable code development roadmap.
+
+CORE PLANNING METHODOLOGY:
+
+I. PROBLEM DECOMPOSITION PHASE
+1. Conduct a deep, multi-dimensional analysis of the user's query
+2. Extract precise problem requirements and constraints
+3. Identify all implicit and explicit technical specifications
+4. Determine the fundamental computational challenges
+
+[... rest of the Plan Code prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Critical Feedback Agent</h2>
+                        <span class="agent-tag">Analysis</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Medium</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Response Review</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Detailed Critique</span>
+                        </div>
+                    </div>
+                    <p class="description">A meticulous response critique agent that provides comprehensive, constructive evaluation of responses with detailed analysis and improvement recommendations.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Comprehensive Analysis</div>
+                        <div class="feature">✓ Actionable Feedback</div>
+                        <div class="feature">✓ Scoring Framework</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('critical-feedback-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('critical-feedback-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="critical-feedback-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">3k characters</span>
+                        </div>
+                        <pre class="prompt-text">Act as a meticulous response critique agent. Your goal is to thoroughly analyze an initial response to a given user query and provide a comprehensive, constructive evaluation.
+
+Primary Evaluation Criteria:
+
+Comprehensiveness:
+- Assess the completeness of the initial response
+- Identify key information or perspectives that may be missing
+- Evaluate the depth of reasoning and explanation
+
+[... rest of the Critical Feedback prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Code Reviewer Agent</h2>
+                        <span class="agent-tag">Code Quality</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Code Review</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Implementation</span>
+                        </div>
+                    </div>
+                    <p class="description">An advanced, meticulous software implementation specialist that transforms strategic plans into comprehensive, production-ready code solutions with emphasis on quality and best practices.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Complete Code Implementation</div>
+                        <div class="feature">✓ Advanced Error Handling</div>
+                        <div class="feature">✓ Performance Optimization</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('code-reviewer-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('code-reviewer-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="code-reviewer-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">4k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are an advanced, meticulous software implementation specialist tasked with translating a precise problem-solving plan into a comprehensive, production-ready code solution. Your core objective is to transform the strategic implementation plan into a fully realized, robust, and elegant code implementation.
+
+[... rest of the Code Reviewer prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Query Analysis Agent</h2>
+                        <span class="agent-tag">Analysis</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Medium</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Query Enhancement</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Enhanced Response</span>
+                        </div>
+                    </div>
+                    <p class="description">A comprehensive analysis agent that examines user queries, plans, and feedback to provide enhanced, more complete answers with deeper insights and better context.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Gap Analysis</div>
+                        <div class="feature">✓ Response Enhancement</div>
+                        <div class="feature">✓ Quality Verification</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('query-analysis-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('query-analysis-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="query-analysis-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">2k characters</span>
+                        </div>
+                        <pre class="prompt-text">Primary Objective
+Transform the critiqued initial response into a superior, more comprehensive answer that addresses all identified gaps and improvement opportunities.
+
+[... rest of the Query Analysis prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Sophisticated Coder</h2>
+                        <span class="agent-tag">Code Enhancement</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Very High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Code Optimization</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Enhanced Code</span>
+                        </div>
+                    </div>
+                    <p class="description">An elite software quality assurance specialist that transforms basic code into sophisticated, production-ready solutions with comprehensive validation and optimization.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Deep Code Analysis</div>
+                        <div class="feature">✓ Security Hardening</div>
+                        <div class="feature">✓ Performance Tuning</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('sophisticated-coder-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('sophisticated-coder-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="sophisticated-coder-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">5k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are an elite software quality assurance and code optimization specialist, tasked with the most critical role of comprehensive code validation, refinement, and enhancement.
+
+[... rest of the Sophisticated Coder prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Response Synthesizer</h2>
+                        <span class="agent-tag">Integration</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Final Answer</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Synthesis</span>
+                        </div>
+                    </div>
+                    <p class="description">A master integrator that synthesizes insights from all agents to produce the most comprehensive, authoritative, and refined final response possible.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Multi-Agent Integration</div>
+                        <div class="feature">✓ Response Optimization</div>
+                        <div class="feature">✓ Insight Extraction</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('response-synthesizer-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('response-synthesizer-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="response-synthesizer-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">3k characters</span>
+                        </div>
+                        <pre class="prompt-text">Produce the definitive, most comprehensive and authoritative response possible, incorporating all previous insights and refinements.
+
+[... rest of the Response Synthesizer prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>UI/UX Designer</h2>
+                        <span class="agent-tag">Design</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Interface Design</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Design Specs</span>
+                        </div>
+                    </div>
+                    <p class="description">An elite UI/UX specialist that transforms requirements into beautiful, intuitive, and highly functional user interfaces with detailed design specifications.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Visual Design System</div>
+                        <div class="feature">✓ Interaction Design</div>
+                        <div class="feature">✓ Accessibility</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('uiux-designer-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('uiux-designer-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="uiux-designer-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">4k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are an elite UI/UX design specialist tasked with transforming requirements into beautiful, intuitive, and highly functional user interfaces...
+
+[... rest of the UI/UX Designer prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Database Architect</h2>
+                        <span class="agent-tag">Database</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Very High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Data Design</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Schema Design</span>
+                        </div>
+                    </div>
+                    <p class="description">A master database architect specialized in designing robust, scalable, and efficient database systems with optimal structures and query patterns.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Schema Design</div>
+                        <div class="feature">✓ Performance Tuning</div>
+                        <div class="feature">✓ Scalability</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('database-architect-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('database-architect-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="database-architect-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">4k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are a master database architect specialized in designing robust, scalable, and efficient database systems...
+
+[... rest of the Database Architect prompt ...]</pre>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <h2>Security Expert</h2>
+                        <span class="agent-tag">Security</span>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="stat">
+                            <span class="stat-label">Complexity</span>
+                            <span class="stat-value">Very High</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best For</span>
+                            <span class="stat-value">Security Review</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Output Type</span>
+                            <span class="stat-value">Security Analysis</span>
+                        </div>
+                    </div>
+                    <p class="description">An elite security specialist focused on identifying and mitigating security vulnerabilities in software systems with comprehensive hardening recommendations.</p>
+                    <div class="agent-features">
+                        <div class="feature">✓ Threat Modeling</div>
+                        <div class="feature">✓ Security Review</div>
+                        <div class="feature">✓ Hardening Plan</div>
+                    </div>
+                    <div class="button-group">
+                        <button class="view-prompt-btn" onclick="togglePrompt('security-expert-prompt')">View Prompt</button>
+                        <button class="copy-btn" onclick="copyPrompt('security-expert-prompt')">Copy Prompt</button>
+                    </div>
+                    <div class="prompt-content" id="security-expert-prompt">
+                        <div class="prompt-header">
+                            <h3>System Prompt</h3>
+                            <span class="prompt-length">4k characters</span>
+                        </div>
+                        <pre class="prompt-text">You are an elite security specialist focused on identifying and mitigating security vulnerabilities in software systems...
+
+[... rest of the Security Expert prompt ...]</pre>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="tab2" class="tab-content">
+            <main class="agents-grid">
+                <!-- Empty grid for future agents -->
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
