@@ -55,19 +55,21 @@ header {
 
 .contribute-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #1F2937;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contribute-link:hover {
     background-color: #374151;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
@@ -392,4 +394,11 @@ header {
 
 html {
     scroll-behavior: smooth;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e5e7eb;
 }
