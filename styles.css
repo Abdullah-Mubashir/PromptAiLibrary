@@ -50,6 +50,24 @@ header {
     color: #1F2937;
     font-weight: 800;
     letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.contribute-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1F2937;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.contribute-link:hover {
+    background-color: #374151;
+    transform: translateY(-1px);
 }
 
 .search-container {
